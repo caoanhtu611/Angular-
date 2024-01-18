@@ -53,6 +53,9 @@ export class ProductsComponent {
   editProduct(id: string) {
     return this.router.navigate([`/admin/products/${id}`]);
   }
+  addProduct() {
+    return this.router.navigate([`/admin/create`]);
+  }
 }
 
 // 1. viết service

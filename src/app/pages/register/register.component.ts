@@ -55,7 +55,7 @@ export class RegisterComponent {
               this.messageService.add({
                 severity: 'success',
                 summary: 'Success',
-                detail: 'Ban da tao tai khoan thanh cong',
+                detail: 'Create Account Success!',
               });
               this.userForm.reset();
               setTimeout(() => {
@@ -63,17 +63,17 @@ export class RegisterComponent {
               }, 1000);
             } else {
               this.messageService.add({
-                severity: 'success',
-                summary: 'Success',
+                severity: 'error',
+                summary: 'Error',
                 detail: data.message,
               });
             }
           });
       } else {
         this.messageService.add({
-          severity: 'success',
-          summary: 'Success',
-          detail: 'Password khong giong nhau',
+          severity: 'error',
+          summary: 'Error',
+          detail: 'Password False!',
         });
       }
     }

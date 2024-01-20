@@ -44,7 +44,7 @@ export class LoginComponent {
           this.messageService.add({
             severity: 'success',
             summary: 'Success',
-            detail: 'Dang nhap thanh cong',
+            detail: 'Login Success!',
           });
           localStorage.setItem('token', JSON.stringify({ token: data.token }));
           this.userForm.reset();
@@ -53,8 +53,8 @@ export class LoginComponent {
           }, 1000);
         } else {
           this.messageService.add({
-            severity: 'success',
-            summary: 'Success',
+            severity: 'error',
+            summary: 'Error',
             detail: data.message,
           });
         }

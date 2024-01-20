@@ -58,7 +58,9 @@ export class CreateComponent {
             detail: 'Add Success',
           });
           this.userForm.reset();
-          this.router.navigate(['/admin/products']);
+          setTimeout(() => {
+            this.router.navigate(['/admin/products']);
+          }, 1000);
         }
       });
     }

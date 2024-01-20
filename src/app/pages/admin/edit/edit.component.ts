@@ -85,7 +85,9 @@ export class EditComponent {
               summary: 'Success',
               detail: 'Update',
             });
-            this.router.navigate(['/admin/products']);
+            setTimeout(() => {
+              this.router.navigate(['/admin/products']);
+            }, 1000);
           }
         });
     }

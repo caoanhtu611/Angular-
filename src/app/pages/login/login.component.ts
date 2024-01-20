@@ -55,7 +55,7 @@ export class LoginComponent {
           this.messageService.add({
             severity: 'error',
             summary: 'Error',
-            detail: data.message,
+            detail: ' Tài Khoản Hoặc Mật Khẩu Sai!',
           });
         }
       });

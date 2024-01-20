@@ -65,7 +65,7 @@ export class RegisterComponent {
               this.messageService.add({
                 severity: 'error',
                 summary: 'Error',
-                detail: data.message,
+                detail: 'Email Đã Tồn Tại!',
               });
             }
           });

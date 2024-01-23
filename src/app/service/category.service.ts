@@ -11,16 +11,16 @@ export class CategoryService {
   getCategory(): Observable<any> {
     return this.http.get<any>(this.apiUrl);
   }
-  // getOneCategory(id: string): Observable<any> {
-  //   return this.http.get<any>(`${this.api}/${id}`);
-  // }
-  // deleteCategory(id: string) {
-  //   return this.http.delete(`${this.api}/${id}`);
-  // }
-  // addCategory(Category: any) {
-  //   return this.http.post(`${this.api}`, Category);
-  // }
-  // updateCategory(Category: any) {
-  //   return this.http.put(`${this.api}/${Category.id}`, Category);
-  // }
+  getOneCategory(id: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
+  }
+  deleteCategory(id: string) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+  addCategory(Category: any) {
+    return this.http.post(`${this.apiUrl}`, Category);
+  }
+  updateCategory(Category: any) {
+    return this.http.put(`${this.apiUrl}/${Category.id}`, Category);
+  }
 }

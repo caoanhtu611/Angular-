@@ -12,9 +12,9 @@ import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { Product } from '../../../types/Product';
-import { ProductService } from '../../../service/products.service';
-import { CategoryService } from '../../../service/category.service';
+import { Product } from '../../../../types/Product';
+import { ProductService } from '../../../../service/products.service';
+import { CategoryService } from '../../../../service/category.service';
 
 @Component({
   selector: 'app-edit',

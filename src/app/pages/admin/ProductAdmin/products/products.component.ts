@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { NgFor } from '@angular/common';
-import { ProductService } from '../../../service/products.service';
+
 import { ConfirmationService, MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
+import { ProductService } from '../../../../service/products.service';
 
 @Component({
   selector: 'app-products',

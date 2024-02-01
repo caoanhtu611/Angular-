@@ -46,7 +46,7 @@ import { ProductService } from '../../../../service/products.service';
   styleUrl: './products.component.css',
   providers: [MessageService, ConfirmationService],
 })
-export class ProductsComponent implements DoCheck {
+export class ProductsComponent {
   productList: any = [];
   userForm: FormGroup;
   first1: number = 0;
@@ -257,43 +257,27 @@ export class ProductsComponent implements DoCheck {
   updateProduct(id: string) {
     return this.router.navigate([`/admin/products/${id}`]);
   }
-  ngDoCheck() {
-    if (this.searchTerm !== this.previousSearchTerm) {
-      const search = this.route.snapshot.params['search'];
-      if (search) {
-        this.productService
-          .getSearchProduct({
-            search: search,
-            page: this.first1,
-            size: 4,
-          })
-          .subscribe((data) => {
-            if (data.status === 1) {
-              this.router.navigate(['/admin/products']);
-              return this.messageService.add({
-                severity: 'warn',
 
-                detail: `Không có dữ liệu với từ khóa : ${search}`,
-              });
-            }
-            this.count = data.count;
-            this.checkData = true;
-            return (this.productList = data.data);
-          });
-      }
-    }
-  }
   onSubmit() {
-    this.router.navigate([
-      '/admin/products',
-      { search: this.searchControl.value },
-    ]);
-    this.searchTerm = this.searchControl.value;
-    this.userForm.reset();
-    this.first1 = 0;
-    setTimeout(() => {
-      this.searchTerm = '';
-    });
+    this.productService
+      .getSearchProduct({
+        search: this.searchControl.value,
+        page: this.first1,
+        size: 4,
+      })
+      .subscribe((data) => {
+        if (data.status === 1) {
+          this.router.navigate(['/admin/products']);
+          return this.messageService.add({
+            severity: 'warn',
+
+            detail: `Không có dữ liệu với từ khóa : ${this.searchControl.value}`,
+          });
+        }
+        this.count = data.count;
+
+        return (this.productList = data.data);
+      });
   }
   comeBack() {
     this.checkData = false;

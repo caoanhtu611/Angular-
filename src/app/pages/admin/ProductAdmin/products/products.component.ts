@@ -255,7 +255,7 @@ export class ProductsComponent implements DoCheck {
     });
   }
   updateProduct(id: string) {
-    return this.router.navigate([`/admin/product/${id}`]);
+    return this.router.navigate([`/admin/products/${id}`]);
   }
   ngDoCheck() {
     if (this.searchTerm !== this.previousSearchTerm) {

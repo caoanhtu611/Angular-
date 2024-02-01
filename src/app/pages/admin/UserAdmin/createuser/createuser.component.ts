@@ -34,6 +34,7 @@ export class CreateUserComponent {
       email: ['', Validators.required],
       password: ['', Validators.required],
       confirmpassword: ['', Validators.required],
+      username: ['', Validators.required],
     });
   }
 
@@ -42,7 +43,11 @@ export class CreateUserComponent {
       const formData = this.userForm.value;
       if (formData.password === formData.confirmpassword) {
         this.authService
-          .SignUp({ email: formData.email, password: formData.password })
+          .SignUp({
+            email: formData.email,
+            password: formData.password,
+            username: formData.username,
+          })
           .subscribe((data: any) => {
             if (data.status === 0) {
               this.messageService.add({

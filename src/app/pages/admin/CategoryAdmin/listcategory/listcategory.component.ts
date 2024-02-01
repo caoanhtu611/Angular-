@@ -98,7 +98,7 @@ export class ListcategoryComponent {
     });
   }
   updateCategory(id: string) {
-    return this.router.navigate([`/admin/category/list/${id}`]);
+    return this.router.navigate([`/admin/category/${id}`]);
   }
   hanFilter(id: string) {
     return this.router.navigate([`/admin/category/list?id=${id}`]);

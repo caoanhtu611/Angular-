@@ -15,9 +15,9 @@ import { ProductService } from '../../service/products.service';
 export class HomeComponent {
   productService = inject(ProductService);
   productList: any = [];
-  ngOnInit(): void {
-    this.productService
-      .getProductList()
-      .subscribe((products: any) => (this.productList = products.data));
-  }
+  // ngOnInit(): void {
+  //   this.productService
+  //     .getProductList()
+  //     .subscribe((products: any) => (this.productList = products.data));
+  // }
 }

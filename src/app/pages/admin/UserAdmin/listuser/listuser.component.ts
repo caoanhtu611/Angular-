@@ -109,7 +109,7 @@ export class ListUserComponent {
           })
           .subscribe((data) => {
             if (data.status === 1) {
-              this.router.navigate(['/admin/user']);
+              this.router.navigate(['/admin/user/userlist']);
               return this.messageService.add({
                 severity: 'warn',
                 detail: `Không có dữ liệu với từ khóa : ${search}`,
@@ -124,7 +124,7 @@ export class ListUserComponent {
   }
   onSubmit() {
     this.router.navigate([
-      '/admin/user',
+      '/admin/user/userlist',
       { search: this.userForm.value.search },
     ]);
     this.searchTerm = this.userForm.value.search;
@@ -136,6 +136,6 @@ export class ListUserComponent {
   comeBack() {
     this.checkData = false;
     this.getAll();
-    this.router.navigate(['/admin/user']);
+    this.router.navigate(['/admin/user/userlist']);
   }
 }

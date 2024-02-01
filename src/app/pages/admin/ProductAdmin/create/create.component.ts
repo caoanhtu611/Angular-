@@ -50,7 +50,7 @@ export class CreateComponent {
     if (this.userForm.valid) {
       const formData = this.userForm.value;
 
-      this.productService.addProductAdmin(formData).subscribe((data: any) => {
+      this.productService.addProduct(formData).subscribe((data: any) => {
         if (data.status === 0) {
           this.messageService.add({
             severity: 'success',

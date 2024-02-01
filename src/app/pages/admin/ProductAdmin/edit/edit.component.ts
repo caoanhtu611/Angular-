@@ -77,7 +77,7 @@ export class EditComponent {
     if (this.userForm.valid) {
       const formData = this.userForm.value;
       this.productService
-        .editProduct({ ...formData, id: this.dataupdate._id })
+        .updateProduct({ ...formData, id: this.dataupdate._id })
         .subscribe((data: any) => {
           if (data.status === 0) {
             this.messageService.add({

@@ -26,9 +26,10 @@ export class ProductsComponent {
   ) {}
 
   getAll(): void {
-    this.productService
-      .getProductListAdmin()
-      .subscribe((products: any) => (this.productList = products.data)); // callApi.then(cb fuc)
+    this.productService.getProductListAdmin().subscribe((products: any) => {
+      console.log(products);
+      this.productList = products.data;
+    }); // callApi.then(cb fuc)
   }
 
   ngOnInit(): void {

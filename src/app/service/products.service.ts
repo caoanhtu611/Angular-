@@ -8,7 +8,8 @@ import { Observable } from 'rxjs';
 })
 export class ProductService {
   // call api
-  apiUrl = 'https://apipro.netlify.app/.netlify/functions/api/product';
+  apiUrl =
+    'https://dynamic-semifreddo-8c4704.netlify.app/.netlify/functions/api/product';
 
   http = inject(HttpClient); // inject bien http
   constructor() {}

@@ -6,7 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class CategoryService {
-  private apiUrl = 'https://apipro.netlify.app/.netlify/functions/api/category';
+  private apiUrl =
+    'https://dynamic-semifreddo-8c4704.netlify.app/.netlify/functions/api/category';
   constructor(private http: HttpClient) {}
   getCategory(): Observable<any> {
     return this.http.get<any>(this.apiUrl);

@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
   private api =
-    'https://courageous-taiyaki-0f7607.netlify.app/.netlify/functions/api/auth';
+    'https://dynamic-semifreddo-8c4704.netlify.app/.netlify/functions/api/auth';
 
   constructor(private http: HttpClient) {}
 
@@ -16,5 +16,18 @@ export class AuthService {
   }
   SignIn(data: any): Observable<any> {
     return this.http.post<any>(`${this.api}/signin`, data);
+  }
+  getPagiUser(page: any): Observable<any> {
+    return this.http.get<any>(
+      `${this.api}/pagi?page=${page.page}&size=${page.size}`
+    );
+  }
+  getSearchUser(id: any): Observable<any> {
+    return this.http.get<any>(
+      `${this.api}/search/${id.search}?page=${id.page}&size=${id.size}`
+    );
+  }
+  deleteUser(id: string) {
+    return this.http.delete(`${this.api}/delete/${id}`);
   }
 }

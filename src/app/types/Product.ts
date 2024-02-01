@@ -7,10 +7,6 @@ export type Product = {
   image: string;
   description: string;
   categoryId: string;
-  rating?: {
-    rate: number;
-    count: number;
-  };
 };
 
 export type ProductAdmin = Omit<Product, 'id' | 'category'> & {

@@ -79,6 +79,12 @@
           >
             Category name
           </th>
+          <th
+            scope="col"
+            class="whitespace-nowrap px-4 py-2 font-medium text-gray-900"
+          >
+            Quantity
+          </th>
 
           <th
             scope="col"
@@ -100,7 +106,14 @@
           >
             <a href="/admin/products?id={{ category._id }}">
               {{ category.name }}
-              <sub>({{ category.products.length }})</sub>
+            </a>
+          </th>
+          <th
+            scope="row"
+            class="mt-[10px] px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+          >
+            <a href="/admin/products?id={{ category._id }}">
+              {{ category.products.length }}
             </a>
           </th>
           <td class="flex justify-center items-center my-3">
